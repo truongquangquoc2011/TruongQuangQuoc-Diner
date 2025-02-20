@@ -1,7 +1,6 @@
 body {
-  background-image: linear-gradient(to right, #ff6600, hsl(30deg 100% 1% / 20%)),
-    url(https://wp.w3layouts.com/diner/wp-content/themes/Diner/assets/images/banner1.jpg);
-    width: 100vw; 
+  background : #fff;
+  width: 100vw; 
   height: 700px;
   background-position: center center;
   background-size: cover;
@@ -9,6 +8,7 @@ body {
   min-height: 100vh;
   margin: 0;
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 h1{
   font-family: 'Quicksand',sans-serif;
@@ -17,19 +17,30 @@ h1{
   line-height: 64px;
   text-transform: capitalize;
 }
+section.banner{
+  background-image: linear-gradient(to right, #ff6600, hsl(30deg 100% 1% / 20%)),  url(https://wp.w3layouts.com/diner/wp-content/themes/Diner/assets/images/banner1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: initial;
+  background-attachment: fixed;
+  min-height: 700px;
+  height: 700px;
+  }
+
 /* header  */
 .main-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(0, 0, 0, 0);
-  padding: 10px 20px;
-  color: white;
-  position: relative;
-  width: 100%;
-  height: 100px;
-  z-index: 10;
+  position: absolute;
+    left: 0;
+    right: 0;
 }
+.dinner-header{
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 20px;
+  padding: 40px 0 20px 0;
+  align-items: center;
+  }
+
 .Logo-dinner {
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -43,7 +54,6 @@ h1{
 
 .container {
   position: relative;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   padding-right: 15px;
@@ -101,6 +111,9 @@ h1{
   overflow: hidden;
   display: block;
 }
+.all-banner{
+  margin-top: 100px;
+}
 .h1 {
   font-size: clamp(1.5rem, 5vw, 4rem);
   white-space: normal;
@@ -111,10 +124,6 @@ h1.mb-4 {
   font-size: clamp(1.5rem, 5vw, 4rem) 3.5rem;
   font-weight: bold;
 }
-
-
-
-
 .container.Banner-text {
   display: flex;
   align-items: center;
@@ -159,16 +168,27 @@ h1.mb-4 {
 }
 
 /* Dinner-infomation */
+
 .agent-block-image {
-  
+  background-image:url(https://wp.w3layouts.com/diner/wp-content/themes/Diner/assets/images/banner3.jpg);
+  flex: 1; /* Chiếm toàn bộ không gian có sẵn */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  min-height: 600px;
   position: relative;
-      display: inline-block; 
+  height: auto;
+  Object-fit: cover;
 }
 .agent-block-image::before {
   content: "";
+  background: rgb(16 15 19 / 46%);
   position: absolute;
-  inset: 0; /* Phủ toàn bộ ảnh */
-  background: rgba(0, 0, 0, 0.3); /* Nền đen mờ 30% */
+  top: 0;
+  min-height: 100%;
+  left: 0;
+  right: 0;
 }
 .Dinner-In4 {
   background-color: #f9f9f9;
@@ -196,15 +216,18 @@ h1.mb-4 {
   margin-top: 10px;
   color: rgba(22, 28, 45, 0.7);
 }
-.abc{
-  width: 500px;
-  height: 212px;
-}
-.bcd{
-  width: 700px;
-  height: 212px;
-}
 
+@media (max-width: 768px) {
+  .text-section {
+      max-width: 90%; /* Giới hạn độ rộng của văn bản */
+  }
+}
+@media (min-width: 992px) {
+  .col-lg-5 {
+      flex: 0 0 auto;
+      width: 500px;
+  }
+}
 .row{
   display: flex;
   flex-wrap: wrap;
@@ -283,11 +306,7 @@ h1.mb-4 {
 .iconlike:hover {
   color: yellow;
 }
-@media (max-width: 768px) {
-  .subscribe-cat {
-    flex-direction: column;
-  }
-}
+
 .subscribe-cat-link {
   display: block;
   color: black;
@@ -297,6 +316,11 @@ h1.mb-4 {
   text-decoration: none;
 }
 
+@media (max-width: 992px) {
+  .agent-block-image {
+      min-height: 200px;
+  }
+}
 
 /* home page - categories */
 .res-categories {
@@ -352,13 +376,7 @@ h1.mb-4 {
   transform: translate3d(0, 10%, 0);
   transition: opacity 0.3s;
 }
-.col-6,
-.col-lg-4 {
-  position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 25px;
-}
+
 .gal-slide-info {
   position: absolute;
   background: rgba(0, 0, 0, 0.192); /* Nền đen mờ */
@@ -395,6 +413,11 @@ h1.mb-4 {
   left: 0;
   right: 0;
   z-index: -1;
+}
+.middle-buttons{
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
 }
 .welcome-left {
   max-width: 700px;
@@ -518,8 +541,317 @@ h1.mb-4 {
   color: white;
   transition: 0.3s ease-in-out;
 }
+
+
+/* stats */
 section.stats {
   margin-top: -70px;
   z-index: 10;
   position: relative;
+}
+
+.stats{
+  width: 100%;
+}
+.counter {
+  background-color: #fff;
+  box-shadow: rgba(1, 1, 1, 0.05) 1px 1px 5px 0px;
+  padding: 40px 20px;
+  border-radius: 6px;
+  text-align: center;
+  transition: 0.3s ease;
+  width: 100%;
+  max-width: 250px; /* Giới hạn tối đa */
+} 
+.counter:hover{
+  transform: translateY(-0.25rem);
+  box-shadow: rgba(46, 41, 51, 0.08) 0px 2px 4px, rgba(71, 63, 79, 0.16) 0px 5px 10px;
+  transition: 0.3s ease;
+}
+
+.counter span.fa {
+  background: #ff6600;
+  font-size: 26px;
+  border-radius: 50%;
+  width: 68px;
+  height: 68px;
+  line-height: 68px;
+  color: #fff;
+  text-align: center;
+}
+.fa-building-o:before {
+  content: "";
+}
+.count-title{
+  font-size: 2.6rem;
+  font-weight: 600;
+}
+.count-text {
+  font-weight: 600;
+  color: rgba(22, 28, 45, 0.7);
+}
+section.Video{
+  background-color: white;
+}
+
+/* video */
+.block-theme-video {
+  background-image: url(https://wp.w3layouts.com/diner/wp-content/themes/Diner/assets/images/banner3.jpg);
+  min-height: 100%;
+}
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgb(255 255 255 / 25%), 0 0 0 10px rgb(255 255 255 / 25%), 0 0 0 20px rgb(255 255 255 / 25%);
+}
+
+100% {
+    box-shadow: 0 0 0 10px rgb(255 255 255 / 25%), 0 0 0 20px rgb(255 255 255 / 25%), 0 0 0 40px rgba(50, 100, 245, 0);
+}
+}
+.video-play-icon{
+  z-index: 11;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  font-size: 26px;
+  padding-left: 2px;
+  text-align: center;
+  line-height: 76px;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  animation: ripple 1s linear infinite;
+  color: #FF6600;
+  border: transparent;
+  background: #fff;
+  
+}
+.agent-block-image2 {
+  background-image:url(https://wp.w3layouts.com/diner/wp-content/themes/Diner/assets/images/banner3.jpg);
+  flex: 1; /* Chiếm toàn bộ không gian có sẵn */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: grid;
+  align-items: center;
+  min-height: 500px;
+  border-radius: 6px;
+  z-index: 1;
+  position: relative;
+}
+.agent-block-image2::before {
+  content: "";
+  background: rgb(16 15 19 / 60%);
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  border-radius: 6px;
+}
+.btn-play {
+  left: 0;
+  right: 0;
+  top: calc(50% - 40px);
+}
+.footer-main{
+  background-color: black;
+  color: white;
+}
+.Header-footer{
+  color : white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: 0.3s ease-in-out;
+}
+.Header-footer:hover{
+  color: #FF6600;
+}
+.footer-main p{
+  font-size: 17px;
+  
+  line-height: 26px;
+  color: #a5a2a1;
+}
+.social-icon a {
+  margin-right: 10px;
+  color: #FF6600;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  background: #fff;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.social-icon a:hover {
+  background: #FF6600;
+  color: #fff;
+}
+.footer-title{
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  position: relative;
+  color: #fff;
+}
+ .footer-style  {
+  list-style: none;
+  
+}
+li {
+  margin-bottom: 4px;
+  
+}
+.footer-style li a {
+  font-size: 17px;
+  line-height: 26px;
+  color: #a5a2a1;
+  text-decoration: none;
+}
+.footer-main input[type="email"] {
+  padding: 14px 20px;
+  font-size: 18px;
+  line-height: 28px;
+  border: 1px solid transparent;
+  outline: none;
+  width: 100%;
+  color: rgba(22, 28, 45, 0.7);
+  background: #fff;
+  border-radius: 6px;
+}
+@media (max-width: 992px) {
+  .footer-main .social-icon {
+      text-align: center;
+      margin-top: 20px;
+  }
+}
+
+.btn-primary{
+  background-color: #FF6600;
+  color: white;
+}
+/* blog post */
+section.blogposts {
+  background-color: #f9f9f9;
+}
+.header-title {
+ width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+}
+.card-blog{
+  width: 100%;
+  background-color: #f7f7f7;
+}
+.text-blog{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.blogposts a.receipe{
+  background:#FF6600;
+  color: #fff;
+  padding: 3px 20px;
+  border-radius: 35px;
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 5px;
+  display: inline-block;
+  letter-spacing: .05em;
+}
+.blogposts span{
+  color: rgb(255, 255, 255);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  line-height: 23px;
+  font-weight: 400;
+}
+.blog-desc{
+  display: block;
+  font-size: 24px;
+  line-height: 34px;
+  font-weight: 600;
+  color: #232121;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-decoration :none;
+}
+.blog-cmt{
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.author{
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  justify-content: flex-start;
+}
+.blogposts .author a {
+  font-weight: 700;
+  color: #232121;
+  letter-spacing: .02em;
+  text-decoration: none;
+}
+.post-img-anchor{
+  width: 40px;
+    height: 40px;
+    display: block;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.read {
+  text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    color: #232121;
+    text-decoration: none;
+}
+.read span {
+  color :#232121;
+}
+
+/*  Testimonials  */
+.owl-carousel.owl-loaded {
+  display: block;
+}
+.owl-carousel {
+  display: none;
+  width: 100%; 
+  z-index: 1;
+  position: relative;
+}
+.owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+}
+.owl-carousel .owl-item {
+  min-height: 1px;
+  float: left;
+}
+.comment-img{
+  width: 85px;
+    height: 85px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+}
+blockquote q {
+  font-size: 24px;
+  line-height: 36px;
+  color: #232121;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 1px;
 }
