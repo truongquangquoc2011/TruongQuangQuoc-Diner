@@ -1,0 +1,558 @@
+body {
+  background: #FFFFFF;
+  width: 100vw;
+  height: 700px;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+/* header  */
+.main-header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.dinner-header {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-gap: 20px;
+  padding: 40px 0 20px 0;
+  align-items: center;
+}
+
+.Logo-dinner {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 10px;
+  line-height: 43px;
+}
+@media (max-width: 600px) {
+  .search-bar {
+    display: none;
+  }
+}
+.container {
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+}
+.right-menu {
+  display: flex;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  flex: 1;
+  max-width: 400px; /* Giới hạn chiều rộng search bar */
+  margin-right: 10px;
+}
+.search-bar {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+}
+.search-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.more-option {
+  background: transparent; /* Nền trong suốt */
+  border: none;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Màu chữ/icon */
+}
+.btn-theme {
+  background: transparent; /* Nền trong suốt */
+  border: none;
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Màu chữ/icon */
+}
+/* Overlay menu */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+/* Hiển thị menu khi mở */
+#mobileMenu:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Nút mở menu */
+.menu-button {
+  position: relative;
+  top: -3px;
+  font-size: 30px;
+  background: transparent;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 1;
+}
+
+/* Nút đóng menu */
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+}
+/* banner */
+.banner {
+  /* background-image: linear-gradient(to right, #ff6600, hsl(30deg 100% 1% / 20%)),  url(https://wp.w3layouts.com/diner/wp-content/themes/Diner/assets/images/banner1.jpg); */
+  background-image: linear-gradient(
+      to right,
+      rgb(236 98 6 / 98%),
+      rgb(5 3 0 / 83%)
+    ),
+    url(https://p.w3layouts.com/demos_new/template_demo/01-02-2021/diner-liberty-demo_Free/668605264/web/assets/images/banner2.jpg);
+  width: 100%;
+  min-height: 350px;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+.header-banner {
+  padding-top: 80px;
+}
+.main-about li {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: #fff;
+  text-transform: capitalize;
+}
+.banner a {
+  color: #ff6600;
+}
+/* in4 about page  */
+.Dinner-In4 {
+  background-color: #fff;
+  padding: 60px 0;
+}
+.title-header {
+  font-family: "Pacifico", cursive;
+  color: #ff6600;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+}
+.sub-header {
+  font-family: "Quicksand", sans-serif;
+  font-size: 38px;
+  line-height: 48px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.text-section {
+  text-align: justify;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(22, 28, 45, 0.7);
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  .text-section {
+    width: 90%; /* Khi màn hình nhỏ hơn 768px, chiếm 90% chiều rộng */
+  }
+}
+/* CARD */
+.card {
+  border: 1px solid #eee;
+  box-shadow: 0 25px 98px 0 rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease-in-out;
+  width: 370px;
+  height: 252px !important;
+  padding: 40px 40px;
+  border-radius: 8px;
+  position: relative;
+  
+}
+
+.card:hover {
+  box-shadow: 0 25px 98px 0 rgba(0, 0, 0, 0.1);
+}
+.icon10 {
+  color: rgb(243, 79, 14);
+}
+
+.layout-card {
+
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 30px;
+}
+.icon-card {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  background: rgba(130, 115, 252, 0.05);
+  line-height: 70px;
+  border-radius: 8%;
+  transition: 0.3s ease-in-out;
+  font-size: 25px;
+  line-height: 70px;
+}
+.header-card h4 {
+  font-family: "QuickSand", sans-serif;
+
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  margin-top: 5px;
+}
+.card p {
+  color: rgba(22, 28, 45, 0.7);
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+}
+.header-card p {
+  margin: 0;
+}
+.header-card a {
+  text-decoration: none;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+.header-card h4 a:hover {
+  color: #ff6600;
+}
+.card:hover .icon-card {
+  transition: 0.3s ease-in-out;
+  background-color: #ff6600;
+}
+.card:hover .icon10 {
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+/* MIDLE */
+.middle {
+  background: url(https://wp.w3layouts.com/diner/wp-content/themes/Diner/assets/images/banner2.jpg);
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+.middle:before {
+  content: "";
+  background: rgb(16 15 19 / 66%);
+  position: absolute;
+  top: 0;
+  min-height: 100%;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.middle-buttons {
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+}
+.welcome-left {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.btn-white {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+.btn-style,
+.btn-white {
+  padding: 12px 45px;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+.hny-title {
+  color: rgb(255, 255, 255);
+  font-family: "QuickSand", sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 55px;
+}
+.btn-white {
+  background: transparent;
+  border: 2px solid;
+  color: #fff;
+}
+.btn-white:hover {
+  background: #fff;
+  border: 2px solid #fff;
+  color: #ff6600;
+}
+.btn-danger {
+  background-color: #ff6600;
+}
+.btn-danger:hover {
+  background-color: #e95d0c;
+}
+.btn:hover {
+  transition: 0.5s all;
+}
+/* plan menu */
+
+.dot-bottom {
+  padding-bottom: 5px;
+  border-bottom: 2px dotted #bbb;
+}
+
+.menu-item h5 {
+  color: #232121;
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+.menu-item p {
+  padding-top: 5px;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(22, 28, 45, 0.7);
+  font-family: "Quicksand", sans-serif;
+}
+.price {
+  color: #ff6600;
+  font-weight: 600;
+  font-size: 21px;
+}
+.menu-item {
+  padding-bottom: 10px;
+}
+
+/* footer  */
+.footer-main {
+  background-color: black;
+  color: white;
+}
+.Header-footer {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: capitalize;
+  transition: 0.3s ease-in-out;
+}
+.Header-footer:hover {
+  color: #ff6600;
+}
+.footer-main p {
+  font-size: 17px;
+
+  line-height: 26px;
+  color: #a5a2a1;
+}
+.social-icon a {
+  margin-right: 10px;
+  color: #ff6600;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  background: #fff;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.social-icon a:hover {
+  background: #ff6600;
+  color: #fff;
+}
+.footer-title {
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: 25px;
+  font-weight: 700;
+  position: relative;
+  color: #fff;
+}
+.footer-style {
+  list-style: none;
+}
+li {
+  margin-bottom: 4px;
+}
+.footer-style li a {
+  font-size: 17px;
+  line-height: 26px;
+  color: #a5a2a1;
+  text-decoration: none;
+}
+.footer-main input[type="email"] {
+  padding: 14px 20px;
+  font-size: 18px;
+  line-height: 28px;
+  border: 1px solid transparent;
+  outline: none;
+  width: 100%;
+  color: rgba(22, 28, 45, 0.7);
+  background: #fff;
+  border-radius: 6px;
+}
+@media (max-width: 992px) {
+  .footer-main .social-icon {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.btn-primary {
+  background-color: #ff6600;
+  color: white;
+}
+/* menu overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 9999;
+  text-align: center;
+}
+.menu-overlay ul li {
+  line-height: 48px;
+  list-style: none;
+}
+.menu-overlay ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  display: block;
+}
+.menu-overlay ul li a:hover {
+  transition: 0.3s ease-in-out;
+  color: #ff6600;
+}
+/* Hiển thị menu khi mở */
+#mobileMenu:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Nút mở menu */
+.menu-button {
+  position: relative;
+  top: -3px;
+  font-size: 30px;
+  background: transparent;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  z-index: 1;
+}
+
+/* Nút đóng menu */
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+}
+/* copyright */
+.copyright{
+  background :black;
+  }
+  .copyright-footer {
+    align-self: center;
+    color: #ddd;
+    font-size: 17px;
+    line-height: 28px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  .copyright-footer p a {
+    text-decoration: none ;
+    color: #ff6600;
+    
+  }
+  .copyright ul li {
+    list-style: none;
+    font-size: 17px;
+    line-height: 26px;
+  }
+  .copyright ul li a {
+    text-decoration: none;
+    color: #a5a2a1;
+  }
+  
